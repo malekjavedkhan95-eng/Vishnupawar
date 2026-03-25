@@ -3,214 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Carpenter Services</title>
+    <title>Vishnu Pawar Woodworks | Expert Carpenter in Surendranagar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic Setup & Fonts */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        /* CSS Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #FAF8F5; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+        a { text-decoration: none; transition: 0.3s ease-in-out; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* Temporary Top Banner */
+        #temp-banner {
+            background-color: #B8860B; 
+            color: white;
+            padding: 8px 15px;
+            text-align: center;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 2000;
         }
-        body { 
-            color: #333; 
-            line-height: 1.6; 
-            scroll-behavior: smooth;
+        #temp-banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        /* Color Palette: Wood brown #8b5a2b, Gold/Tan #d2a679, Dark #222 */
-        header { 
-            background-color: #222; 
-            color: #fff; 
-            padding: 1.5rem 0; 
-            text-align: center; 
+        #temp-banner-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding-left: 10px;
+        }
+
+        /* Modern Header & Navigation */
+        header {
+            background-color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             position: sticky;
-            top: 0;
-            z-index: 100;
+            top: 0; 
+            z-index: 1000;
         }
-        header h1 { 
-            font-size: 2.2rem; 
-            color: #d2a679; 
-            letter-spacing: 1px;
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        nav { 
-            margin-top: 15px; 
-        }
-        nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            margin: 0 15px; 
-            font-weight: bold; 
-            transition: 0.3s;
-        }
-        nav a:hover { 
-            color: #d2a679; 
-        }
-
-        /* Hero Section (Main Banner) */
-        .hero { 
-            /* Placeholder background image from Unsplash */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581147036324-c104e76ea012?auto=format&fit=crop&w=1000&q=80') center/cover; 
-            height: 70vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: #fff; 
-            text-align: center; 
-            padding: 0 20px; 
-        }
-        .hero h2 { 
-            font-size: 3.5rem; 
-            margin-bottom: 15px; 
-            color: #d2a679; 
-        }
-        .hero p { 
-            font-size: 1.3rem; 
-            margin-bottom: 30px; 
-            max-width: 600px;
-        }
-        .btn { 
-            padding: 12px 30px; 
-            background-color: #d2a679; 
-            color: #222; 
-            text-decoration: none; 
-            font-size: 1.1rem; 
-            font-weight: bold; 
-            border-radius: 5px; 
-            transition: 0.3s;
-        }
-        .btn:hover { 
-            background-color: #b88655; 
-            color: #fff;
-        }
-
-        /* Services Section */
-        .services { 
-            padding: 5rem 20px; 
-            background-color: #f4f4f4; 
-            text-align: center; 
-        }
-        .services h2 { 
-            margin-bottom: 3rem; 
-            font-size: 2.5rem; 
-            color: #222; 
+        .branding h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
             text-transform: uppercase;
         }
-        .service-container { 
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 30px; 
-            max-width: 1200px; 
-            margin: auto; 
+        .branding h1 span {
+            color: #B8860B;
         }
-        .service-box { 
-            background: #fff; 
-            padding: 30px 20px; 
-            border-radius: 8px; 
-            width: 320px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            transition: transform 0.3s; 
-            border-bottom: 4px solid #8b5a2b;
+        nav ul {
+            display: flex;
+            gap: 20px;
         }
-        .service-box:hover { 
-            transform: translateY(-10px); 
+        nav ul li a {
+            color: #555;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
-        .service-box h3 { 
-            color: #8b5a2b; 
-            margin-bottom: 15px; 
+        nav ul li a:hover {
+            color: #B8860B;
+        }
+        
+        /* Mobile Hamburger Menu */
+        #mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #333;
             font-size: 1.5rem;
         }
 
-        /* Contact Section */
-        .contact { 
-            padding: 5rem 20px; 
-            text-align: center; 
-            background-color: #222; 
-            color: #fff; 
+        /* Hero Section (Main Banner) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518116315809-f815a510526e?q=80&w=2000&auto=format&fit=crop') center/cover;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
         }
-        .contact h2 { 
-            margin-bottom: 25px; 
-            color: #d2a679; 
+        .hero-content h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .hero-content h2 span {
+            color: #B8860B;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid #B8860B;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #B8860B;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+        .btn-wa {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: white;
+        }
+        .btn-wa:hover {
+            background-color: #1ebe57;
+            border-color: #1ebe57;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-title {
             font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            text-transform: uppercase;
         }
-        .contact p { 
-            margin-bottom: 15px; 
-            font-size: 1.2rem; 
+        .section-subtitle {
+            font-size: 1rem;
+            color: #B8860B;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .experience-badge {
+            display: inline-block;
+            background: #B8860B;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background-color: #F0EEE9; 
+            text-align: center;
+        }
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        .service-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-bottom: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-bottom: 4px solid #B8860B;
+        }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #FAF8F5;
         }
         .contact-info {
-            margin-top: 30px;
-            background: #333;
-            display: inline-block;
-            padding: 20px 40px;
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .contact-item {
+            background-color: white;
+            padding: 30px;
             border-radius: 8px;
+            border-left: 4px solid #B8860B;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+        }
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .contact-item p {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: #333;
+        }
+        .contact-item a {
+            color: #B8860B;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .float-wa:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
-        footer { 
-            background-color: #111; 
-            color: #777; 
-            text-align: center; 
-            padding: 20px 0; 
+        footer {
+            background-color: #222;
+            color: #AAA;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
         }
+        footer p span { color: #B8860B; }
 
-        /* Mobile Responsive */
-        @media(max-width: 768px) {
-            .hero h2 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .branding h1 { font-size: 1.3rem; }
+            nav ul { display: none; flex-direction: column; width: 100%; text-align: center; padding: 20px 0; gap: 10px; border-top: 1px solid #EEE; position: absolute; top: 100%; left: 0; background: white; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            #mobile-menu-toggle { display: block; }
+            .show-menu { display: flex !important; }
+
+            .hero { height: 70vh; }
+            .hero-content h2 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .float-wa { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <div id="temp-banner">
+        <div id="temp-banner-content">
+            <p><strong>[Temporary Notice]</strong> Vishnu Pawar Woodworks test site. Currently hosted on nan95-eng.github.io</p>
+            <button id="temp-banner-close">&times;</button>
+        </div>
+    </div>
+
     <header>
-        <h1>[vishnu pawar] Woodworks</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-container">
+            <div class="branding">
+                <h1>Vishnu Pawar <span>Woodworks</span></h1>
+            </div>
+            <button id="mobile-menu-toggle">&#9776;</button>
+            <nav>
+                <ul id="main-nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="home" class="hero">
-        <h2>Expert Carpentry & Woodworking</h2>
-        <p>Best quality custom furniture, home repairs, aur premium wooden interiors aapke budget mein.</p>
-        <a href="#contact" class="btn">Call Now</a>
+        <div class="hero-content">
+            <h2>EXPERT CARPENTRY <span>&</span> WOODWORKING</h2>
+            <p>Surendranagar mein sabse majboot aur premium quality ka woodwork, aapke budget mein. Hum har kaam mein expert hain!</p>
+            <div class="button-group">
+                <a href="tel:+919876543210" class="btn">📞 Call Now</a>
+                <a href="https://wa.me/919876543210?text=Hello,%20mujhe%20carpentry%20ka%20kaam%20karwana%20hai" class="btn btn-wa" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <p class="section-subtitle">Aapke Sapne, Hamaari Lakdi</p>
+        <h2 class="section-title">About Us</h2>
+        <p>Main (Vishnu Pawar) aur meri team lakdi ke har tarah ke kaam mein expert hain. Chahe naya premium furniture banwana ho, ghar ka interior design ho, ya choti-badi repairing ho, hum ekdum mast aur finishing wala kaam karke dete hain.</p>
+        <div class="experience-badge">7+ Years of Excellence</div>
     </section>
 
     <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-box">
+        <p class="section-subtitle">A to Z Carpentry Solutions</p>
+        <h2 class="section-title">OUR SERVICES</h2>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">🛏️</div>
                 <h3>Custom Furniture</h3>
-                <p>Naye beds, wardrobes, dining tables, aur chairs aapki pasand aur space ke hisaab se design kiye jate hain.</p>
+                <p>Naye Beds, Wardrobes, Dining Tables, Sofa, aur Cabinets aapki pasand aur jagah ke hisaab se banaye jaate hain.</p>
             </div>
-            <div class="service-box">
-                <h3>Home Repairs</h3>
-                <p>Tute hue doors, windows, cabinets, aur kisi bhi tarah ki lakdi ki repairing ka kaam jaldi aur majbooti se.</p>
+            
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>All Types of Repairs</h3>
+                <p>Purane furniture ko naya jaisa banaana, doors, windows, locks fix karna aur lakdi ki har tarah ki repairing.</p>
             </div>
-            <div class="service-box">
-                <h3>Modular Kitchens & Polish</h3>
-                <p>Modern modular kitchens banana aur purane furniture ko polish karke naya jaisa chamkana.</p>
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Modular Kitchen & Polish</h3>
+                <p>Modern style modular kitchens banana aur purane furniture ko premium polish karke chamkana.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Apne ghar ke liye naya furniture banwana hai ya repair karwana hai? Aaj hi call karein!</p>
+        <p class="section-subtitle">Hamen Call Karen Ya Message Karen</p>
+        <h2 class="section-title">Contact Us</h2>
+        <p>Apne ghar ya office ke liye woodwork karwana hai? Aaj hi humse sampark karein aur free estimate lein!</p>
         
         <div class="contact-info">
-            <p>📞 <strong>Phone:</strong> +91 93526 12863</p>
-            <p>📧 <strong>Email:</strong> +91 93526 12863 </p>
-            <p>📍 <strong>Location:</strong> surendranagar, Gujarat</p>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <p>Direct Call Karen:</p>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+                <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">(WhatsApp par bhi available)</p>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <p>Hamaara Pata (Location):</p>
+                <p style="font-weight: bold; color: #333; font-size: 1.1rem; margin-top: 5px;">Surendranagar, Gujarat</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 [vishnu] Woodworks. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 <span>Vishnu Pawar Woodworks</span>. All rights reserved.</p>
+        </div>
     </footer>
+
+    <a href="https://wa.me/919876543210?text=Hello,%20mujhe%20carpentry%20ka%20kaam%20karwana%20hai" class="float-wa" target="_blank" title="Chat on WhatsApp">
+        <span style="font-size: 35px;">✆</span>
+    </a>
+
+    <script>
+        // Banner Closing
+        document.getElementById('temp-banner-close').addEventListener('click', function() {
+            document.getElementById('temp-banner').style.display = 'none';
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            var navLinks = document.getElementById('main-nav-links');
+            navLinks.classList.toggle('show-menu');
+        });
+        
+        // Close mobile menu on link click
+        var allLinks = document.querySelectorAll('nav ul li a');
+        allLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var navLinks = document.getElementById('main-nav-links');
+                navLinks.classList.remove('show-menu');
+            });
+        });
+    </script>
 
 </body>
 </html>
