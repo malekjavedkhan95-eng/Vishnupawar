@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Carpenter Services</title>
+    <style>
+        /* Basic Setup & Fonts */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        body { 
+            color: #333; 
+            line-height: 1.6; 
+            scroll-behavior: smooth;
+        }
+        
+        /* Color Palette: Wood brown #8b5a2b, Gold/Tan #d2a679, Dark #222 */
+        header { 
+            background-color: #222; 
+            color: #fff; 
+            padding: 1.5rem 0; 
+            text-align: center; 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 { 
+            font-size: 2.2rem; 
+            color: #d2a679; 
+            letter-spacing: 1px;
+        }
+        nav { 
+            margin-top: 15px; 
+        }
+        nav a { 
+            color: #fff; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        nav a:hover { 
+            color: #d2a679; 
+        }
+
+        /* Hero Section (Main Banner) */
+        .hero { 
+            /* Placeholder background image from Unsplash */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581147036324-c104e76ea012?auto=format&fit=crop&w=1000&q=80') center/cover; 
+            height: 70vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: #fff; 
+            text-align: center; 
+            padding: 0 20px; 
+        }
+        .hero h2 { 
+            font-size: 3.5rem; 
+            margin-bottom: 15px; 
+            color: #d2a679; 
+        }
+        .hero p { 
+            font-size: 1.3rem; 
+            margin-bottom: 30px; 
+            max-width: 600px;
+        }
+        .btn { 
+            padding: 12px 30px; 
+            background-color: #d2a679; 
+            color: #222; 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            transition: 0.3s;
+        }
+        .btn:hover { 
+            background-color: #b88655; 
+            color: #fff;
+        }
+
+        /* Services Section */
+        .services { 
+            padding: 5rem 20px; 
+            background-color: #f4f4f4; 
+            text-align: center; 
+        }
+        .services h2 { 
+            margin-bottom: 3rem; 
+            font-size: 2.5rem; 
+            color: #222; 
+            text-transform: uppercase;
+        }
+        .service-container { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+        .service-box { 
+            background: #fff; 
+            padding: 30px 20px; 
+            border-radius: 8px; 
+            width: 320px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s; 
+            border-bottom: 4px solid #8b5a2b;
+        }
+        .service-box:hover { 
+            transform: translateY(-10px); 
+        }
+        .service-box h3 { 
+            color: #8b5a2b; 
+            margin-bottom: 15px; 
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact { 
+            padding: 5rem 20px; 
+            text-align: center; 
+            background-color: #222; 
+            color: #fff; 
+        }
+        .contact h2 { 
+            margin-bottom: 25px; 
+            color: #d2a679; 
+            font-size: 2.5rem;
+        }
+        .contact p { 
+            margin-bottom: 15px; 
+            font-size: 1.2rem; 
+        }
+        .contact-info {
+            margin-top: 30px;
+            background: #333;
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer { 
+            background-color: #111; 
+            color: #777; 
+            text-align: center; 
+            padding: 20px 0; 
+        }
+
+        /* Mobile Responsive */
+        @media(max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[vishnu pawar] Woodworks</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Expert Carpentry & Woodworking</h2>
+        <p>Best quality custom furniture, home repairs, aur premium wooden interiors aapke budget mein.</p>
+        <a href="#contact" class="btn">Call Now</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <h3>Custom Furniture</h3>
+                <p>Naye beds, wardrobes, dining tables, aur chairs aapki pasand aur space ke hisaab se design kiye jate hain.</p>
+            </div>
+            <div class="service-box">
+                <h3>Home Repairs</h3>
+                <p>Tute hue doors, windows, cabinets, aur kisi bhi tarah ki lakdi ki repairing ka kaam jaldi aur majbooti se.</p>
+            </div>
+            <div class="service-box">
+                <h3>Modular Kitchens & Polish</h3>
+                <p>Modern modular kitchens banana aur purane furniture ko polish karke naya jaisa chamkana.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Apne ghar ke liye naya furniture banwana hai ya repair karwana hai? Aaj hi call karein!</p>
+        
+        <div class="contact-info">
+            <p>📞 <strong>Phone:</strong> +91 93526 12863</p>
+            <p>📧 <strong>Email:</strong> +91 93526 12863 </p>
+            <p>📍 <strong>Location:</strong> surendranagar, Gujarat</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 [vishnu] Woodworks. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
